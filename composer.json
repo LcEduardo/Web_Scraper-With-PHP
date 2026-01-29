@@ -1,0 +1,21 @@
+{
+    "name": "lucaseduardo/buscador",
+    "description": "Buscar produtos do mercado livre",
+    "type": "library",
+    "autoload": {
+        "psr-4": {
+            "Lucaseduardo\\Buscador\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "LcEduardo",
+            "email": "lucasproject777@gmail.com"
+        }
+    ],
+    "require": {
+        "guzzlehttp/guzzle": "^7.10",
+        "symfony/dom-crawler": "^8.0",
+        "symfony/css-selector": "^8.0"
+    }
+}

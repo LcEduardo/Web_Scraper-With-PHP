@@ -15,8 +15,10 @@ $html = $response->getBody()->getContents();
 
 // preciso percorrer o html
 $crawler = new Crawler($html);
-$class = $crawler->filter('.row');
+$class = $crawler->filter('.product_pod');
 
-foreach ($class as $p) {
-    var_dump($p);
-}
+$class->each(function (Crawler $book, $i) {
+    $title = $book->filter('h3 a')->attr('title');
+    echo $title . PHP_EOL;
+});
+

@@ -1,24 +1,16 @@
 <?php
 
-require __DIR__ . '/../vendor/autoload.php';
-
 use GuzzleHttp\Client;
-use Symfony\Component\DomCrawler\Crawler;
 
-$client = new Client();
-$response = $client->request('GET', 'https://books.toscrape.com/');
+require __DIR__ . '/../vendor/autoload.php';
+require __DIR__ . '/Buscador.php';
 
-echo $response->getStatusCode() . PHP_EOL;
-//echo $response->getBody() . PHP_EOL;
+$cliente = new Client();
 
-$html = $response->getBody()->getContents();
+$buscar = new Buscador($cliente, 'https://books.toscrape.com/');
 
-// preciso percorrer o html
-$crawler = new Crawler($html);
-$class = $crawler->filter('.product_pod');
+$livros = $buscar->buscarLivros();
 
-$class->each(function (Crawler $book, $i) {
-    $title = $book->filter('h3 a')->attr('title');
-    echo $title . PHP_EOL;
-});
-
+foreach ($livros as $livro) {
+    echo $livro . PHP_EOL;
+}

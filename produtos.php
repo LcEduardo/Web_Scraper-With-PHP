@@ -1,9 +1,9 @@
 <?php
 
-use GuzzleHttp\Client;
+require __DIR__ . '/vendor/autoload.php';
 
-require __DIR__ . '/../vendor/autoload.php';
-require __DIR__ . '/Buscador.php';
+use GuzzleHttp\Client;
+use Lucaseduardo\Buscador\Buscador;
 
 $cliente = new Client();
 

@@ -1,5 +1,7 @@
 <?php
 
+namespace Lucaseduardo\Buscador;
+
 use GuzzleHttp\Client;
 use Symfony\Component\DomCrawler\Crawler;
 

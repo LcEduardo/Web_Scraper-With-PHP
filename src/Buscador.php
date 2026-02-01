@@ -5,12 +5,12 @@ namespace Lucaseduardo\Buscador;
 use GuzzleHttp\Client;
 use Symfony\Component\DomCrawler\Crawler;
 
-class Buscador {
+class Buscador 
+{
 
     private Client $cliente;
     private string $url;
-    public function __construct(Client $cliente, string $url)
-    {
+    public function __construct(Client $cliente, string $url) {
         $this->cliente = $cliente;
         $this->url = $url;
     }
